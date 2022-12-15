@@ -1,16 +1,47 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+.up_header {
+    background-color: $blue;
+    .container {
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            font-weight: bolder;
+        }
+    }
+}
 header {
     height: 90px;
     img{
         width: 70px;
     }
 
-    li {
+    li a {
         padding:0 1rem;
+        text-decoration: none;
         text-transform: uppercase;
         font-weight: bolder;
         font-size: 0.8rem;
+        color: black;
+        &:hover:not(.active_li) {
+            color: gray;
+            cursor: pointer;
+        }
+
+    }
+    .active_li {
+        color: $blue;
+    }
+    input {
+        border: none;
+        border-bottom:  2px solid $blue;
+        outline: none;
+        text-align: right;
     }
 }
 section#jumbo {
@@ -78,6 +109,33 @@ section#comic_list {
     }
 
 }
+section#icons_section {
+    background-color: $blue;
+
+.container {
+    height: 130px;
+    .icon_item {
+        display: flex;
+        align-items: center;
+        img {
+            width: 40px;
+        }
+        a {
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: white;
+            padding: 0 1rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+        }
+    }
+}
+
+}
 footer {
     background-color: rgb(48, 48, 48) ;
     .container {
@@ -129,7 +187,7 @@ footer {
     }
     section#links_section {
         background-image: url(../img/footer-bg.jpg);
-        height: 400px;
+        height: 420px;
         background-size: cover;
         background-repeat: no-repeat;
         overflow: hidden;
@@ -153,6 +211,11 @@ footer {
                 padding: 0.3rem 0;
                 font-size: 0.8rem;
                 color: gray;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
         }
 
